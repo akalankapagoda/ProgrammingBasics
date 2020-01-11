@@ -1,7 +1,11 @@
-package com.dagger.programming.basics;
+package com.dagger.programming.basics.general;
 
 import java.util.*;
 
+/**
+ * Given a set of (x,y) coordinates, find points which would create
+ * a rectangle if joined.
+ */
 public class RectInGrid {
 
     public static void main(String[] args) {
@@ -20,6 +24,13 @@ public class RectInGrid {
         printRectangles(coordinates);
     }
 
+    /**
+     * Find the coordinates which creates a line, which means groups coordinates where x is same.
+     * Then in each line found, find 2 Y coordinates which are the same in two different lines.
+     *
+     * Note that this is brute force. I'll improve this later somewhere between now and Eternity.
+     * @param coordinates
+     */
     public static void printRectangles(int[][] coordinates) {
 
         Map<Integer, List<Integer>> lines = new HashMap<>();
